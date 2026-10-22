@@ -3,13 +3,14 @@
 from calc.arrays import MIN_VALUE, MAX_VALUE
 
 
-# Проверяет, нужно ли менять элементы местами.
+# Проверяет, нужно ли менять элементы местами (в зависимости от направления).
 def is_out_of_order(a, b, descending):
     if descending:
         return a < b
     return a > b
 
 
+# Сортировка пузырьком (Bubble sort).
 def bubble_sort(array, descending=False):
     n = len(array)
     for i in range(n - 1):
@@ -22,6 +23,7 @@ def bubble_sort(array, descending=False):
             break
 
 
+# Сортировка выбором (Selection sort).
 def selection_sort(array, descending=False):
     n = len(array)
     for i in range(n - 1):
@@ -32,6 +34,7 @@ def selection_sort(array, descending=False):
         array[i], array[best] = array[best], array[i]
 
 
+# Сортировка вставками (Insertion sort).
 def insertion_sort(array, descending=False):
     n = len(array)
     for i in range(1, n):
@@ -43,6 +46,7 @@ def insertion_sort(array, descending=False):
         array[j] = current
 
 
+# Сортировка подсчётом (Counting sort).
 def counting_sort(array, descending=False):
     counters = [0] * (MAX_VALUE - MIN_VALUE + 1)
     for val in array:

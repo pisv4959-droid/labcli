@@ -1,8 +1,10 @@
 """Решение уравнений вида A*x^2 + B*x + C = 0."""
 
 import math
+from calc.arrays import MIN_VALUE, MIN_VALUE
+from calc.arrays import MAX_VALUE, MAX_VALUE
 
-MAX_VALUE = 10000
+
 
 
 def check_coefficients(coefficients):

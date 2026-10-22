@@ -1,15 +1,11 @@
-"""
-main — приложение работы №1.
-Решение уравнений вида A*x^2 + B*x + C = 0.
 
-Сохраняется без изменений как исходный вариант первой работы.
-Актуальная версия приложения — mathtool.py.
-"""
 
 import sys
 import math
+from calc.arrays import MIN_VALUE, MAX_VALUE
 
-MAX_VALUE = 10000
+
+
 
 
 def print_help():

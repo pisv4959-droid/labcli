@@ -9,6 +9,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from cli import build_parser
 from calc import equation, stats, series, integration, arrays, sorting
+from calc.arrays import MIN_VALUE, MAX_VALUE
 
 
 # Измеряет время выполнения операции и выводит в stderr.
@@ -157,7 +158,9 @@ def handle_integrate(args):
 def handle_fill(args):
     if not (1 <= args.count <= arrays.MAX_COUNT):
         raise ValueError(f"количество элементов вне диапазона 1..{arrays.MAX_COUNT}")
-    if not (arrays.MIN_VALUE <= args.min <= args.max <= arrays.MAX_VALUE):
+    
+    # Используем импортированные MIN_VALUE и MAX_VALUE
+    if not (MIN_VALUE <= args.min <= args.max <= MAX_VALUE):
         raise ValueError("некорректные границы значений")
 
     result = measure_time(

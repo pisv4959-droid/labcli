@@ -2,6 +2,7 @@
 
 import argparse
 from calc import series, integration, sorting, arrays
+from calc.arrays import MIN_VALUE, MAX_VALUE
 
 
 def build_parser():
@@ -39,8 +40,8 @@ def build_parser():
     # --- fill ---
     p_fill = subparsers.add_parser("fill", help="генерация массива", allow_abbrev=False)
     p_fill.add_argument("-c", "--count", type=int, required=True, help="количество элементов")
-    p_fill.add_argument("--min", type=int, default=arrays.MIN_VALUE, help="минимум")
-    p_fill.add_argument("--max", type=int, default=arrays.MAX_VALUE, help="максимум")
+    p_fill.add_argument("--min", type=int, default=MIN_VALUE, help="минимум")
+    p_fill.add_argument("--max", type=int, default=MAX_VALUE, help="максимум")
     p_fill.add_argument("--seed", type=int, help="начальное значение генератора")
     p_fill.add_argument("-o", "--output", help="файл для сохранения")
 
